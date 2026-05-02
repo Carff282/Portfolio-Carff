@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Filipe Franco Cardoso — Carff. Desenvolvedor Full Stack, especializado em HTML, CSS e JavaScript." />
+  <meta name="author" content="Filipe Franco Cardoso" />
+  <meta property="og:title" content="CarffCode | Portfólio" />
+  <meta property="og:description" content="Do caos ao código — portfólio de Filipe Franco Cardoso (Carff)." />
+  <meta property="og:type" content="website" />
+  <title>CarffCode | Filipe Franco Cardoso</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+
+      <a href="#home" class="nav__logo">
+        <span class="logo-bracket"><</span>CarffCode<span class="logo-bracket">></span>
+      </a>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home"         class="nav__link active-link">Início</a></li>
+        <li><a href="#about"        class="nav__link">Sobre</a></li>
+        <li><a href="#skills"       class="nav__link">Skills</a></li>
+        <li><a href="#certificates" class="nav__link">Certificados</a></li>
+        <li><a href="#projects"     class="nav__link">Projetos</a></li>
+        <li><a href="#testimonials" class="nav__link">Depoimentos</a></li>
+        <li><a href="#contact"      class="nav__link">Contato</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <!-- Redes sociais no header -->
+        <div class="nav__socials">
+          <a href="https://github.com/Carff282" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/filipe-franco-cardoso-016b6737b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.instagram.com/carffcode/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://w.app/carff-codes" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+
+        <!-- Toggle dark/light -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- Hamburger mobile -->
+        <button class="nav__hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero section" id="home">
+
+      <!-- Elementos decorativos de fundo -->
+      <div class="hero__bg" aria-hidden="true">
+        <span class="hero__bg-code top-left">{ }</span>
+        <span class="hero__bg-code top-right"></></span>
+        <span class="hero__bg-code bottom-left">[ ]</span>
+        <span class="hero__bg-code bottom-right">( )</span>
+        <div class="hero__grid-lines"></div>
+      </div>
+
+      <div class="container hero__container">
+
+        <div class="hero__text">
+          <p class="hero__greeting">Olá, mundo! 👋</p>
+          <h1 class="hero__name">
+            Filipe Franco<br />
+            <span class="highlight">Cardoso</span>
+          </h1>
+          <h2 class="hero__role">
+            <span class="typed-wrapper">
+              <span id="typedText"></span><span class="cursor">|</span>
+            </span>
+          </h2>
+          <p class="hero__subtitle">
+            Do caos ao código: construindo interfaces modernas com
+            <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>.
+          </p>
+          <p class="hero__desc">
+              Sou desenvolvedor focado em transformar ideias em aplicações
+              web funcionais, rápidas e bem estruturadas. Gosto de unir código limpo,
+              boas práticas e uma experiência de usuário fluida em cada projeto que construo.
+          </p>
+
+          <div class="hero__buttons">
+            <a href="#projects" class="btn btn--primary">
+              <i class="fa-solid fa-rocket"></i> Ver Projetos
+            </a>
+            <a href="/CurriculoVitaeCarff.pdf" class="btn btn--outline" download>
+              <i class="fa-solid fa-download"></i> Baixar CV
+            </a>
+          </div>
+
+          <!-- Scroll indicator -->
+          <div class="hero__scroll">
+            <a href="#about" aria-label="Rolar para baixo">
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__image">
+          <div class="hero__img-wrapper">
+            <div class="hero__img-circle">
+              <img
+                src="Carffcodefreelancer.png"
+                alt="Filipe Franco Cardoso — Carff"
+                class="hero__photo"
+              />
+            </div>
+            <!-- Badge flutuante -->
+            <div class="hero__badge badge--top">
+              <i class="fa-brands fa-js"></i> JavaScript
+            </div>
+            <div class="hero__badge badge--bottom">
+              <i class="fa-brands fa-css3-alt"></i> CSS3
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="about section" id="about">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <p class="section__tag">// quem sou eu</p>
+          <h2 class="section__title">Sobre <span class="highlight">mim</span></h2>
+          <p class="section__subtitle">Desenvolvedor Full Stack, focado em evoluir um pouco todos os dias.</p>
+        </div>
+
+        <div class="about__container">
+
+          <div class="about__image reveal">
+            <div class="about__img-wrapper">
+              <img src="./assets/Perfil carff.jpeg" alt="Filipe Franco Cardoso" class="about__photo" />
+              <div class="about__img-decoration" aria-hidden="true"></div>
+            </div>
+
+            <!-- Card de status -->
+            <div class="about__status-card">
+              <span class="status-dot"></span>
+              <span>Disponível para projetos</span>
+            </div>
+          </div>
+
+          <div class="about__content reveal">
+            <p class="about__text">
+              Olá, eu sou o <strong>Filipe Franco Cardoso</strong>, mas pode me chamar de <strong>Carff</strong>.
+              Atuo como desenvolvedor Full Stack com foco em HTML, CSS e JavaScript, transformando
+              curiosidade por tecnologia em projetos reais por meio de estudos constantes e prática diária.
+
+            </p>
+            <p class="about__text">
+              Gosto de pegar ideias complexas e traduzi-las em interfaces claras, responsivas e 
+              acessíveis. Valorizo código limpo, semântica, boas práticas e a experiência de quem
+              está do outro lado da tela.
+            </p>
+            <p class="about__text">
+              Meu objetivo é seguir evoluindo como dev, colaborar em projetos que façam diferença e contribuir
+              com soluções simples, eficientes e bem pensadas — sempre <em class="highlight">do caos ao código</em>.
+            </p>
+
+            <!-- Info cards -->
+            <div class="about__info">
+              <div class="about__info-item">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <span>Açailândia, Maranhão</span>
+              </div>
+              <div class="about__info-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Desenvolvedor — full stack</span>
+              </div>
+              <div class="about__info-item">
+                <i class="fa-solid fa-code"></i>
+                <span>HTML · CSS · JavaScript · React</span>
+              </div>
+              <div class="about__info-item">
+                <i class="fa-solid fa-globe"></i>
+                <span>Aberto a trabalho remoto</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn--primary">
+              <i class="fa-solid fa-paper-plane"></i> Vamos conversar
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="skills section" id="skills">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <p class="section__tag">// tecnologias</p>
+          <h2 class="section__title">Skills & <span class="highlight">Tecnologias</span></h2>
+          <p class="section__subtitle">
+            Estas são as tecnologias que utilizo hoje para construir interfaces modernas e funcionais.
+            Estou sempre expandindo esse conjunto de ferramentas.
+          </p>
+        </div>
+
+        <div class="skills__grid">
+
+          <!-- HTML5 -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <h3 class="skill-card__name">HTML5</h3>
+            <p class="skill-card__desc">Estrutura semântica, acessibilidade e boas práticas para SEO.</p>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="85"></div>
+            </div>
+            <span class="skill-card__level">Intermediário</span>
+          </div>
+
+          <!-- CSS3 -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <h3 class="skill-card__name">CSS3</h3>
+            <p class="skill-card__desc">Layouts responsivos, Flexbox, Grid, animações e design consistente.</p>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="80"></div>
+            </div>
+            <span class="skill-card__level">Intermediário</span>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <h3 class="skill-card__name">JavaScript</h3>
+            <p class="skill-card__desc">Interatividade, DOM, consumo de APIs e lógica para aplicações dinâmicas.</p>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="70"></div>
+            </div>
+            <span class="skill-card__level">Em evolução</span>
+          </div>
+
+          <!-- Git -->
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <h3 class="skill-card__name">Git & GitHub</h3>
+            <p class="skill-card__desc">Versionamento, repositórios e colaboração com boas práticas de commits.</p>
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-width="65"></div>
+            </div>
+            <span class="skill-card__level">Em evolução</span>
+          </div>
+
+          <!-- React (em breve) -->
+          <div class="skill-card skill-card--soon reveal">
+            <div class="skill-card__icon">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <h3 class="skill-card__name">React</h3>
+            <p class="skill-card__desc">Componentes reutilizáveis e interfaces reativas — em aprendizado ativo.</p>
+            <span class="badge-soon">Em aprendizado</span>
+          </div>
+
+          <!-- Node (em breve) -->
+          <div class="skill-card skill-card--soon reveal">
+            <div class="skill-card__icon">
+              <i class="fa-brands fa-node-js"></i>
+            </div>
+            <h3 class="skill-card__name">Node.js</h3>
+            <p class="skill-card__desc">Back-end JavaScript, APIs REST e desenvolvimento full stack.</p>
+            <span class="badge-soon">Em breve</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CERTIFICADOS ===================== -->
+    <section class="certificates section" id="certificates">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <p class="section__tag">// conquistas</p>
+          <h2 class="section__title">
+            Certificados de <span class="highlight">Conclusão</span>
+          </h2>
+          <p class="section__subtitle">
+            Alguns dos cursos que concluí recentemente e que reforçam minha base em
+            HTML, CSS e Git & GitHub.
+          </p>
+        </div>
+
+        <div class="certificates__grid">
+
+          <!-- HTML -->
+          <article class="certificate-card reveal">
+            <div class="certificate-card__thumb">
+              <img
+                src="./assets/Certificado HTML.png"
+                alt="Certificado de conclusão - HTML - Dev Club"
+                loading="lazy"
+              />
+            </div>
+            <div class="certificate-card__content">
+              <h3 class="certificate-card__title">HTML · Dev Club</h3>
+              <p class="certificate-card__meta">
+                Emissão: <span>23/09/2025</span>
+              </p>
+              <p class="certificate-card__desc">
+                Fundamentos de HTML, semântica, estruturação de páginas e boas práticas
+                para construção de interfaces acessíveis.
+              </p>
+            </div>
+          </article>
+
+          <!-- CSS -->
+          <article class="certificate-card reveal">
+            <div class="certificate-card__thumb">
+              <img
+                src="./assets/Certificado CSS.png   "
+                alt="Certificado de conclusão - CSS Intermediário - Dev Club"
+                loading="lazy"
+              />
+            </div>
+            <div class="certificate-card__content">
+              <h3 class="certificate-card__title">CSS Intermediário · Dev Club</h3>
+              <p class="certificate-card__meta">
+                Emissão: <span>24/10/2025</span>
+              </p>
+              <p class="certificate-card__desc">
+                Layouts responsivos, Flexbox, Grid, tipografia, cores e criação de
+                interfaces modernas com foco em experiência do usuário.
+              </p>
+            </div>
+          </article>
+
+          <!-- Git & GitHub -->
+          <article class="certificate-card reveal">
+            <div class="certificate-card__thumb">
+              <img
+                src="./assets/Certificado Git & GitHub.png"
+                alt="Certificado de conclusão - Git e GitHub - Dev Club"
+                loading="lazy"
+              />
+            </div>
+            <div class="certificate-card__content">
+              <h3 class="certificate-card__title">Git & GitHub · Dev Club</h3>
+              <p class="certificate-card__meta">
+                Emissão: <span>09/03/2026</span>
+              </p>
+              <p class="certificate-card__desc">
+                Versionamento de código, controle de branches, pull requests e fluxo de
+                trabalho colaborativo com Git & GitHub.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="projects section" id="projects">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <p class="section__tag">// trabalhos</p>
+          <h2 class="section__title">Projetos em <span class="highlight">destaque</span></h2>
+          <p class="section__subtitle">
+            Alguns dos projetos que desenvolvi para praticar, consolidar conhecimentos e criar soluções reais.
+            Cada um reflete minha evolução como desenvolvedor.
+          </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="projects__filter reveal">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="html-css">HTML & CSS</button>
+          <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        </div>
+
+        <div class="projects__grid" id="projectsGrid">
+
+          <!-- Projeto 1 -->
+          <article class="project-card reveal" data-category="html-css">
+            <div class="project-card__image">
+              <img src="./assets/Projeto Dr.Leandro.png" alt="Projeto Dr. Leandro" loading="lazy" />
+              <div class="project-card__overlay">
+                <a href="https://github.com/Carff282/Projeto-Dr-Leandro" target="_blank" rel="noopener" class="btn btn--sm">
+                  <i class="fa-brands fa-github"></i> Ver Código
+                </a>
+                <a href="https://carff282.github.io/Projeto-Dr-Leandro/" target="_blank" rel="noopener" class="btn btn--sm btn--primary">
+                  <i class="fa-solid fa-eye"></i> Ver Projeto
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+              <h3 class="project-card__title">Projeto Dr. Leandro</h3>
+              <p class="project-card__desc">
+                Aplicação web responsiva focada na apresentação profissional de um médico,
+                com seções bem organizadas, CTA claros e navegação fluida.
+              </p>
+            </div>
+          </article>
+
+          <!-- Projeto 2 -->
+          <article class="project-card reveal" data-category="html-css">
+            <div class="project-card__image">
+              <img src="./assets/Projeto Lucas Brito.png" alt="Projeto Lucas Brito" loading="lazy" />
+              <div class="project-card__overlay">
+                <a href="https://github.com/Carff282/Lucas-Brito-Performance.git" target="_blank" rel="noopener" class="btn btn--sm">
+                  <i class="fa-brands fa-github"></i> Ver Código
+                </a>
+                <a href="https://github.com/Carff282/Lucas-Brito-Performance.git" target="_blank" rel="noopener" class="btn btn--sm btn--primary">
+                  <i class="fa-solid fa-eye"></i> Ver Projeto
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+              <h3 class="project-card__title">Projeto Lucas Brito</h3>
+              <p class="project-card__desc">
+                Landing page moderna com foco em identidade visual e experiência do usuário,
+                explorando animações suaves e bom contraste.
+              </p>
+            </div>
+          </article>
+
+          <!-- Projeto 3 -->
+          <article class="project-card reveal" data-category="javascript">
+            <div class="project-card__image">
+              <img src="https://via.placeholder.com/600x380/0f1117/00d9ff?text=Carff%27s+Cryptic+Codes" alt="Carff's Cryptic Codes" loading="lazy" />
+              <div class="project-card__overlay">
+                <a href="https://github.com/Carff282/Carff282" target="_blank" rel="noopener" class="btn btn--sm">
+                  <i class="fa-brands fa-github"></i> Ver Código
+                </a>
+                <a href="https://carff282.github.io/" target="_blank" rel="noopener" class="btn btn--sm btn--primary">
+                  <i class="fa-solid fa-eye"></i> Ver Projeto
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <h3 class="project-card__title">Carff's Cryptic Codes</h3>
+              <p class="project-card__desc">
+                Projeto autoral onde exploro efeitos visuais, microinterações e responsividade,
+                mantendo o código organizado e bem comentado.
+              </p>
+            </div>
+          </article>
+
+          <!-- Projeto 4 -->
+          <article class="project-card reveal" data-category="html-css">
+            <div class="project-card__image">
+              <img src="https://via.placeholder.com/600x380/0f1117/00d9ff?text=Projetos+CSS" alt="Projetos CSS" loading="lazy" />
+              <div class="project-card__overlay">
+                <a href="https://github.com/Carff282/Projetos" target="_blank" rel="noopener" class="btn btn--sm">
+                  <i class="fa-brands fa-github"></i> Ver Código
+                </a>
+                <a href="https://carff282.github.io/Projetos/" target="_blank" rel="noopener" class="btn btn--sm btn--primary">
+                  <i class="fa-solid fa-eye"></i> Ver Projeto
+                </a>
+              </div>
+            </div>
+            <div class="project-card__content">
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+              <h3 class="project-card__title">Projetos de Estudo</h3>
+              <p class="project-card__desc">
+                Coleção de projetos práticos desenvolvidos durante a jornada de aprendizado,
+                aplicando conceitos de layout, tipografia e responsividade.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="projects__cta reveal">
+          <a href="https://github.com/Carff282" target="_blank" rel="noopener" class="btn btn--outline">
+            <i class="fa-brands fa-github"></i> Ver todos no GitHub
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== DEPOIMENTOS ===================== -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <p class="section__tag">// feedback</p>
+          <h2 class="section__title">Depoi<span class="highlight">mentos</span></h2>
+          <p class="section__subtitle">Algumas palavras de pessoas que acompanharam minha jornada e meus projetos.</p>
+        </div>
+
+        <div class="testimonials__slider reveal" id="testimonialsSlider">
+
+          <div class="testimonials__track" id="testimonialsTrack">
+
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="testimonial-card__text">
+                "O Filipe demonstra muita dedicação em aprender e aplicar boas práticas.
+                A cada projeto, ele se preocupa em entregar um resultado organizado,
+                responsivo e com foco em quem vai usar."
+              </p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">
+                  <img src="https://via.placeholder.com/60/0f1117/00d9ff?text=M" alt="Mentor" />
+                </div>
+                <div>
+                  <strong>Mentor / Cliente</strong>
+                  <span>Colaboração de projeto</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="testimonial-card__text">
+                "Impressionante como o Carff evoluiu rapidamente. O cuidado com semântica
+                e responsividade já se destaca logo nos primeiros projetos, mostrando
+                maturidade de código acima do esperado para alguém em formação."
+              </p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">
+                  <img src="https://via.placeholder.com/60/0f1117/00d9ff?text=D" alt="Dev" />
+                </div>
+                <div>
+                  <strong>Desenvolvedor Senior</strong>
+                  <span>Comunidade de devs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="testimonial-card__text">
+                "O projeto que o Filipe fez pra mim ficou exatamente como eu pedi —
+                limpo, rápido e bonito. Ele foi atencioso em cada detalhe e entregou
+                dentro do prazo. Super recomendo!"
+              </p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">
+                  <img src="https://via.placeholder.com/60/0f1117/00d9ff?text=C" alt="Cliente" />
+                </div>
+                <div>
+                  <strong>Cliente</strong>
+                  <span>Projeto freelance</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controles do slider -->
+          <div class="testimonials__controls">
+            <button class="slider-btn" id="sliderPrev" aria-label="Anterior">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="testimonials__dots" id="sliderDots"></div>
+            <button class="slider-btn" id="sliderNext" aria-label="Próximo">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <p class="section__tag">// fale comigo</p>
+          <h2 class="section__title">Vamos <span class="highlight">conversar?</span></h2>
+          <p class="section__subtitle">
+            Se você precisa de alguém para construir, melhorar ou tirar do papel um projeto web,
+            será um prazer conversar. Envie uma mensagem ou fale diretamente pelas redes.
+          </p>
+        </div>
+
+        <div class="contact__container">
+
+          <!-- Formulário -->
+          <form class="contact__form reveal" id="contactForm" novalidate>
+
+            <div class="form__group">
+              <label for="name" class="form__label">Nome completo</label>
+              <input type="text" id="name" name="name" class="form__input"
+                     placeholder="Seu nome" required autocomplete="name" />
+              <span class="form__error" id="nameError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">E-mail</label>
+              <input type="email" id="email" name="email" class="form__input"
+                     placeholder="seu@email.com" required autocomplete="email" />
+              <span class="form__error" id="emailError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="subject" class="form__label">Assunto</label>
+              <input type="text" id="subject" name="subject" class="form__input"
+                     placeholder="Sobre o que você quer falar?" required />
+              <span class="form__error" id="subjectError"></span>
+            </div>
+
+            <div class="form__group">
+              <label for="message" class="form__label">Mensagem</label>
+              <textarea id="message" name="message" class="form__textarea"
+                        placeholder="Conta mais sobre o seu projeto ou ideia..." required rows="5"></textarea>
+              <span class="form__error" id="messageError"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span id="btnText">Enviar mensagem</span>
+            </button>
+
+            <div class="form__feedback" id="formFeedback" role="alert"></div>
+
+          </form>
+
+          <!-- Bloco de redes sociais -->
+          <div class="contact__socials reveal">
+
+            <h3 class="contact__socials-title">Conecte-se comigo</h3>
+
+            <div class="social-links">
+
+              <!-- E-mail -->
+              <a href="mailto:filipe.carff282@gmail.com" class="social-link">
+                <div class="social-link__icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="social-link__info">
+                  <strong>E-mail</strong>
+                  <span>filipe.carff282@gmail.com</span>
+                  <p>Canal direto para propostas de projetos, dúvidas e oportunidades.</p>
+                </div>
+              </a>
+
+              <!-- GitHub -->
+              <a href="https://github.com/Carff282" target="_blank" rel="noopener" class="social-link">
+                <div class="social-link__icon">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div class="social-link__info">
+                  <strong>GitHub</strong>
+                  <span>github.com/Carff282</span>
+                  <p>Onde compartilho meus projetos, estudos e experimentos com código.</p>
+                </div>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/filipe-franco-cardoso-016b6737b/" target="_blank" rel="noopener" class="social-link">
+                <div class="social-link__icon">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="social-link__info">
+                  <strong>LinkedIn</strong>
+                  <span>Filipe Franco Cardoso</span>
+                  <p>Minha trajetória profissional e conexões na área de tecnologia.</p>
+                </div>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/carffcode/" target="_blank" rel="noopener" class="social-link">
+                <div class="social-link__icon">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="social-link__info">
+                  <strong>Instagram</strong>
+                  <span>@carffcode</span>
+                  <p>Bastidores dos projetos e o dia a dia "do caos ao código".</p>
+                </div>
+              </a>
+
+              <!-- WhatsApp -->
+              <a href="https://w.app/carff-codes" target="_blank" rel="noopener" class="social-link">
+                <div class="social-link__icon social-link__icon--whatsapp">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="social-link__info">
+                  <strong>WhatsApp</strong>
+                  <span>+55 99 99100-9204</span>
+                  <p>Clique para iniciar uma conversa ou escaneie o QR Code abaixo.</p>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- QR Code WhatsApp -->
+            <div class="qrcode-wrapper">
+              <p class="qrcode-label">
+                <i class="fa-brands fa-whatsapp"></i> Escaneie para conversar no WhatsApp
+              </p>
+              <div class="qrcode-box" id="qrCodeBox">
+                <img src="./assets/qrcode-whatsapp.png.png" alt="QR Code WhatsApp Carff" width="120" height="120" />
+              </div>
+              <p class="qrcode-number">+55 99 99100-9204</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__container">
+
+      <div class="footer__brand">
+        <a href="#home" class="nav__logo">
+          <span class="logo-bracket"><</span>CarffCode<span class="logo-bracket">/></span>
+        </a>
+        <p>Do caos ao código — construindo o futuro, uma linha por vez.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Rodapé">
+        <a href="#home">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificados</a>
+        <a href="#projects">Projetos</a>
+        <a href="#testimonials">Depoimentos</a>
+        <a href="#contact">Contato</a>
+      </nav>
+
+      <div class="footer__socials">
+        <a href="https://github.com/Carff282" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/filipe-franco-cardoso-016b6737b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/carffcode/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://w.app/carff-codes" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>
+        &copy; 2026 · <strong>CarffCode</strong> · Desenvolvido por
+        <strong>Filipe Franco Cardoso</strong>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- JavaScript principal -->
+  <script src="script.js"></script>
+
+</body>
+</html>
