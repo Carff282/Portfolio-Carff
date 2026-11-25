@@ -29,6 +29,12 @@ Visual (gerar.py):
   A "nota" só aparece se sobrar espaço embaixo. Funciona melhor em slides do tipo pilha, destaque e codigo com poucos checks.
 - O kicker da capa pode ser pessoal ("// eu demorei pra entender isso") em vez de técnico.
 
+## Ajustes da semana
+A análise semanal (todo domingo à noite) escreve aqui o que funcionou e o que mudar.
+Siga esta seção: ela vale mais que as regras gerais de tema e formato abaixo, menos a REGRA Nº 1.
+
+(ainda sem dados: primeira análise em 29/11/2026)
+
 ## Rodízio de temas (pelo dia da semana, horário de Brasília)
 - Segunda: arquitetura e design de sistemas
 - Terça: dicas de JavaScript / TypeScript
@@ -44,7 +50,11 @@ Nunca repita um tema que já esteja em posts/historico.md. Prefira temas especí
 - Segunda, quarta, sexta e domingo: CARROSSEL (create_carousel_post com os NN.jpg).
 - Terça, quinta e sábado: REEL. Gere os slides normalmente (5 a 7 slides funcionam melhor) e depois
   `python3 posts/_gerador/midia.py reel <pasta>` → <pasta>/reel.mp4 (cerca de 4 s por slide, 9:16).
-  Publique com create_video_post (video_url = URL do reel.mp4, caption, share_to_feed true, thumb_offset 0).
+  Publique como REEL DE TESTE (Trial Reel): create_video_post com video_url = URL do reel.mp4, caption,
+  thumb_offset 0 e trial_params {"graduation_strategy": "SS_PERFORMANCE"} (sem share_to_feed).
+  O Instagram mostra o Reel de teste só para quem ainda NÃO segue o perfil e, se ele for bem, libera
+  automaticamente para os seguidores. É o que traz gente nova. Se a API recusar o trial_params,
+  publique uma única vez como Reel normal (share_to_feed true) e avise isso na mensagem ao Filipe.
   No reel, o texto de cada slide precisa ser lido em uns 4 s: seja ainda mais curto.
 
 ## Stories (todo dia)
