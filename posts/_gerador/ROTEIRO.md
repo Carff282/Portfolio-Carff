@@ -29,8 +29,22 @@ Visual (gerar.py):
   A "nota" só aparece se sobrar espaço embaixo. Funciona melhor em slides do tipo pilha, destaque e codigo com poucos checks.
 - O kicker da capa pode ser pessoal ("// eu demorei pra entender isso") em vez de técnico.
 
+## Análise semanal (só aos domingos, ANTES de criar o post do dia)
+1. Windsor get_data, connector instagram, date_preset last_7d: por post, os campos media_id, timestamp,
+   media_type, media_permalink, media_reach, media_views, media_total_like_count, media_total_comments_count,
+   media_saved, media_shares, media_follows. Da conta: followers_count. Junte com posts/historico.md para saber
+   o tema, o estilo (caderno/escuro) e o horário de cada post.
+2. Compare: quais temas, formatos (carrossel × Reel de teste), estilos e horários tiveram mais alcance,
+   salvamentos, compartilhamentos e seguidores novos. Com poucos dados, diga isso e não tire conclusões fortes.
+3. Reescreva a seção "Ajustes da semana" abaixo (substitua a anterior): no máximo 8 linhas, concretas
+   (ex.: "Reels de teste trouxeram 3x mais alcance: priorize ganchos curtos na capa"). Nunca contrarie a REGRA Nº 1.
+   Não mude os horários das tarefas agendadas: se um horário for claramente pior, só sugira ao Filipe.
+4. Registre o número de seguidores da semana em posts/seguidores.md (crie se não existir: | Data | Seguidores |).
+5. Commit e push junto com o post do dia. Na mensagem final ao Filipe, inclua um resumo da semana em
+   3 a 5 linhas: seguidores (antes → agora), melhor post e o que vai mudar.
+
 ## Ajustes da semana
-A análise semanal (todo domingo à noite) escreve aqui o que funcionou e o que mudar.
+A análise semanal (todo domingo) escreve aqui o que funcionou e o que mudar.
 Siga esta seção: ela vale mais que as regras gerais de tema e formato abaixo, menos a REGRA Nº 1.
 
 (ainda sem dados: primeira análise em 29/11/2026)
