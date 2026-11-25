@@ -20,6 +20,7 @@ MUTED = (139, 148, 158)
 GREEN = (63, 185, 80)
 INTER = "/usr/share/fonts/opentype/inter/"
 MONOB = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"
+HAND = "/usr/share/fonts/truetype/google-fonts/ofl/comicrelief/ComicRelief-Bold.ttf"
 
 
 def slides(pasta):
@@ -29,12 +30,30 @@ def slides(pasta):
     return s
 
 
+TEMA = {}
+
+
+def detectar_tema(pasta):
+    """Lê a cor do fundo do slide 01 para combinar story/reel com o estilo do post."""
+    global BG, TXT, MUTED, GREEN
+    px = Image.open(slides(pasta)[0]).convert("RGB").getpixel((20, 700))
+    claro = sum(px) > 450
+    TEMA["claro"] = claro
+    if claro:
+        BG, TXT, MUTED, GREEN = (248, 245, 237), (28, 28, 32), (105, 105, 112), (21, 128, 61)
+
+
 def fundo():
     im = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(im)
-    for gx in range(40, W, 40):
-        for gy in range(40, H, 40):
-            d.point((gx, gy), fill=(28, 33, 40))
+    if TEMA.get("claro"):
+        for gy in range(80, H, 46):
+            d.line([0, gy, W, gy], fill=(214, 225, 238), width=2)
+        d.line([46, 0, 46, H], fill=(239, 163, 163), width=2)
+    else:
+        for gx in range(40, W, 40):
+            for gy in range(40, H, 40):
+                d.point((gx, gy), fill=(28, 33, 40))
     return im, d
 
 
@@ -43,18 +62,36 @@ def centro(d, y, txt, font, fill):
 
 
 def story(pasta):
+    import random
+    rng = random.Random(os.path.abspath(pasta))
     capa = Image.open(slides(pasta)[0]).convert("RGB")
     im, d = fundo()
-    centro(d, 150, "NOVO POST NO FEED", ImageFont.truetype(MONOB, 44), GREEN)
-    cw = 920
+    hand = ImageFont.truetype(HAND, 72)
+    tinta = (29, 78, 216) if TEMA.get("claro") else (250, 204, 21)
+    frase = rng.choice(["saiu post novo!", "post novo no ar", "corre lá no feed", "fiz um post novo"])
+    t = Image.new("RGBA", (900, 120), (0, 0, 0, 0))
+    td = ImageDraw.Draw(t)
+    td.text(((900 - td.textlength(frase, font=hand)) / 2, 20), frase, font=hand, fill=tinta)
+    t = t.rotate(rng.uniform(-4, -1), expand=True, resample=Image.BICUBIC)
+    im.paste(t, ((W - t.width) // 2, 120), t)
+    # capa levemente torta, com sombra, como um print colado
+    cw = 880
     ch = int(capa.height * cw / capa.width)
-    capa = capa.resize((cw, ch))
-    y = 260
-    d.rounded_rectangle([(W - cw) // 2 - 6, y - 6, (W + cw) // 2 + 6, y + ch + 6], radius=18, outline=GREEN, width=4)
-    im.paste(capa, ((W - cw) // 2, y))
-    f = ImageFont.truetype(INTER + "Inter-Bold.otf", 54)
-    centro(d, y + ch + 90, "Toca no post e salva 🔖".replace(" 🔖", ""), f, TXT)
-    centro(d, y + ch + 170, "@carffcode", ImageFont.truetype(MONOB, 40), MUTED)
+    capa = capa.resize((cw, ch)).convert("RGBA")
+    sombra = Image.new("RGBA", (cw + 40, ch + 40), (0, 0, 0, 0))
+    ImageDraw.Draw(sombra).rectangle([20, 20, cw + 20, ch + 20], fill=(0, 0, 0, 70))
+    from PIL import ImageFilter
+    sombra = sombra.filter(ImageFilter.GaussianBlur(12))
+    ang = rng.uniform(-2.5, 2.5)
+    sombra = sombra.rotate(ang, expand=True, resample=Image.BICUBIC)
+    capa = capa.rotate(ang, expand=True, resample=Image.BICUBIC)
+    y = 290
+    im.paste(sombra, ((W - sombra.width) // 2 + 6, y - 10), sombra)
+    im.paste(capa, ((W - capa.width) // 2, y), capa)
+    hy = y + capa.height + 70
+    f = ImageFont.truetype(HAND, 50)
+    centro(d, hy, "o post completo tá no feed", f, TXT)
+    centro(d, hy + 80, "@carffcode", ImageFont.truetype(MONOB, 40), MUTED)
     out = os.path.join(pasta, "story.jpg")
     im.save(out, quality=92)
     print(out)
@@ -67,7 +104,7 @@ def reel(pasta, seg=4.0, fade=0.5):
     for i, p in enumerate(paths):
         s = Image.open(p).convert("RGB")
         # no vídeo não existe "arrasta →": apaga o aviso do rodapé
-        ImageDraw.Draw(s).rectangle([360, s.height - 90, 720, s.height - 40], fill=BG)
+        ImageDraw.Draw(s).rectangle([360, s.height - 90, 720, s.height - 40], fill=s.getpixel((700, s.height - 30)))
         im, d = fundo()
         y = (H - s.height) // 2
         im.paste(s, (0, y))
@@ -104,4 +141,5 @@ def reel(pasta, seg=4.0, fade=0.5):
 
 
 if __name__ == "__main__":
+    detectar_tema(sys.argv[2])
     {"story": story, "reel": reel}[sys.argv[1]](sys.argv[2])
